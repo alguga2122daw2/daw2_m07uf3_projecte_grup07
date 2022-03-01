@@ -1,0 +1,2 @@
+# Carpeta en la que se va a montar el volumen persistente que contiene las bases de datos y tablas de MariaDB.
+volume
