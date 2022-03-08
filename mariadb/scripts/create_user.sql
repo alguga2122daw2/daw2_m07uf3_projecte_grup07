@@ -1,1 +1,0 @@
--- Script para crear el usuario administrador de MariaDB

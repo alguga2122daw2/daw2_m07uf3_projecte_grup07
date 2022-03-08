@@ -1,0 +1,1 @@
+La primary key de lloguer es el dni+id_apartamento.
