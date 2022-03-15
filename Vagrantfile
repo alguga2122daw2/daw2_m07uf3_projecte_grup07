@@ -1,16 +1,17 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/debian10"
-  config.vm.hostname = "laravel"
+  config.vm.hostname = "proyecto-m07uf3-laravel"
   config.vm.provider "virtualbox" do |v|
     # v.gui = true
-    v.name = "laravel"
+    v.name = "proyecto-m07uf3-laravel"
     v.memory = 2048
     v.cpus = 1
-    v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']     
+    v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
   end
 
+  config.vm.synced_folder "src/", "/var/www/html"
   config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest:443, host: 8443
+  config.vm.network "forwarded_port", guest: 443, host: 8443
   config.vm.network "forwarded_port", guest: 22, host: 8022
   config.vm.network "forwarded_port", guest: 3306, host: 8306
   config.vm.network "forwarded_port", guest: 8000, host: 8000
@@ -26,6 +27,7 @@ Vagrant.configure("2") do |config|
     sudo apt-get install -y php php7.3 libapache2-mod-php libapache2-mod-php7.3 php-mysql php7.3-mysql
     sudo apt-get install -y php-bcmath php-json php-mbstring php-tokenizer php-xml php-zip
     sudo apt-get install -y composer
+    # TODO: Configurar apache para que muestre el proyecto de Laravel
   SHELL
 
 end
