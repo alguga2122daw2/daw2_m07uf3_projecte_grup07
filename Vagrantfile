@@ -17,16 +17,26 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update -y
-    sudo apt-get upgrade -y
-    sudo apt-get install -y net-tools
-    sudo apt-get install -y openssh-server openssh-sftp-server
-    sudo apt-get install -y openssl
-    sudo apt-get install -y apache2 apache2-doc
-    sudo apt-get install -y mariadb-server mariadb-client
-    sudo apt-get install -y php php7.3 libapache2-mod-php libapache2-mod-php7.3 php-mysql php7.3-mysql
-    sudo apt-get install -y php-bcmath php-json php-mbstring php-tokenizer php-xml php-zip
-    sudo apt-get install -y composer
+    # System
+    apt-get update -y
+    apt-get upgrade -y
+    apt-get install -y net-tools aptitude
+    apt-get install -y openssh-server openssh-sftp-server
+    apt-get install -y openssl
+    apt-get install -y apache2 apache2-doc
+    apt-get install -y mariadb-server mariadb-client
+    apt-get install -y php php7.3 libapache2-mod-php libapache2-mod-php7.3 php-mysql php7.3-mysql
+    apt-get install -y php-bcmath php-json php-mbstring php-tokenizer php-xml php-zip
+    apt-get install -y composer
+    # Apache
+    a2enmod rewrite
+    systemctl restart apache2service
+    # Laravel
+    su - vagrant -c 'composer global require laravel/installer'
+    su - vagrant -c 'echo "export PATH=$PATH:~/.composer/vendor/bin" >> ~/.bashrc'
+    chmod 777 -R /var/www/html
+    # User
+    ln -s /var/www/html /home/vagrant/apache
     # TODO: Configurar apache para que muestre el proyecto de Laravel
   SHELL
 
