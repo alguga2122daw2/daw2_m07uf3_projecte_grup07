@@ -15,7 +15,7 @@ class ControladorApartament extends Controller
     public function index()
     {
         $apartament = Apartament::all();
-        return view('index', compact('apartament'));
+        return view('apartaments/giindex', compact('apartament'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ControladorApartament extends Controller
      */
     public function create()
     {
-        return view('crea_apartament');
+        return view('apartaments/crea');
     }
 
     /**
@@ -74,7 +74,7 @@ class ControladorApartament extends Controller
     public function edit($id)
     {
         $apartament = Apartament::findOrFail($id);
-        return view('actualitza', compact('apartament'));
+        return view('apartaments/actualitza', compact('apartament'));
     }
 
     /**

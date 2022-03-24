@@ -4,7 +4,7 @@
 
 <div class="card mt-5">
   <div class="card-header">
-    Afegeix un nou empleat
+    Afegeix un nou apartament
   </div>
 
   <div class="card-body">
@@ -17,7 +17,7 @@
         </ul>
       </div>
     @endif
-      <form method="post" action="{{ route('empleats.store') }}">
+      <form method="post" action="{{ route('apartaments.store') }}">
           <div class="form-group">
               @csrf
               <label for="nom">Nom</label>
@@ -35,7 +35,7 @@
       </form>
   </div>
 </div>
-<br><a href="{{ url('empleats') }}">Accés directe a la Llista d'empleats</a>
+<br><a href="{{ url('apartaments') }}">Accés directe a la Llista d'empleats</a>
 @endsection
 
 <!-- TODO: Cambiar los campos de este formulario para que sean correctos -->

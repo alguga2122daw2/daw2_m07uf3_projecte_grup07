@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Apartament extends Model
 {
+    public $timestamps = false;
+    protected $primaryKey = 'id_Apartament';
+    public $incrementing = false;
     use HasFactory;
     protected $fillable = [
         "id_Apartament",

@@ -16,7 +16,7 @@ class CreateApartamentsTable extends Migration
         Schema::create('apartaments', function (Blueprint $table) {
             $table->string("id_Apartament");
             $table->primary("id_Apartament");
-            $table->string("refCast");
+            $table->string("refCatast");
             $table->string("ciutat");
             $table->string("barri");
             $table->string("carrer");

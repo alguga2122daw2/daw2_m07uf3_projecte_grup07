@@ -15,7 +15,7 @@ class ControladorTreballador extends Controller
     public function index()
     {
         $treballador = Treballador::all();
-        return view('index', compact('treballador'));
+        return view('treballadors/index', compact('treballador'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ControladorTreballador extends Controller
      */
     public function create()
     {
-        return view('crea_treballador');
+        return view('treballadors/crea');
     }
 
     /**
@@ -43,9 +43,9 @@ class ControladorTreballador extends Controller
             'tipus' => 'required|max:255',
             'hora_entrada' => 'required|max:255',
             'hora_sortida' => 'required|max:255'
-            ]);
-            $empleat = Treballador::create($nouTreballador);
-            return redirect('/treballadors')->with('completed', 'Treballador creat!');
+        ]);
+        $treballador = Treballador::create($nouTreballador);
+        return redirect('/treballadors')->with('completed', 'Treballador creat!');
     }
 
     /**
@@ -65,10 +65,10 @@ class ControladorTreballador extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($email)
     {
-        $treballador = Treballador::findOrFail($id); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
-        return view('actualitza', compact('treballador'));
+        $treballador = Treballador::findOrFail($email); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
+        return view('treballadors/actualitza', compact('treballador'));
     }
 
     /**
@@ -78,7 +78,7 @@ class ControladorTreballador extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $email)
     {
         $dades = $request->validate([
             'nom' => 'required|max:255',
@@ -88,7 +88,7 @@ class ControladorTreballador extends Controller
             'hora_entrada' => 'required|max:255',
             'hora_sortida' => 'required|max:255'
             ]);
-        Treballador::whereId($id)->update($dades); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
+        Treballador::whereEmail($email)->update($dades); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
         return redirect('/treballadors')->with('completed', 'Treballador actualitzat');
     }
 
@@ -98,9 +98,9 @@ class ControladorTreballador extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($email)
     {
-        $treballador = Treballador::findOrFail($id); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
+        $treballador = Treballador::findOrFail($email); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
         $treballador->delete();
         return redirect('/treballadors')->with('completed', 'Treballador esborrat');
     }

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Treballador extends Model
 {
+    public $timestamps = false;
+    protected $primaryKey = 'email';
+    public $incrementing = false;
     use HasFactory;
     protected $fillable = [
         'nom',

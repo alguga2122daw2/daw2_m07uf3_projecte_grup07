@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ControladorTreballador;
+// use App\Http\Controllers\ControladorApartament;
+// use App\Http\Controllers\ControladorTreballador;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('treballadors', ControladorTreballador::class);
+Route::resource('apartaments', ControladorApartament::class);

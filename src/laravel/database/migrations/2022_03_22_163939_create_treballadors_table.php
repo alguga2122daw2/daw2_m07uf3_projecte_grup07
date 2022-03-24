@@ -21,7 +21,6 @@ class CreateTreballadorsTable extends Migration
             $table->string('tipus');
             $table->time('hora_entrada');
             $table->time('hora_sortida');
-            $table->timestamps();
         });
     }
 
