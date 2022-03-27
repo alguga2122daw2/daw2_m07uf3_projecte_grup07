@@ -67,7 +67,7 @@ class ControladorTreballador extends Controller
      */
     public function edit($email)
     {
-        $treballador = Treballador::findOrFail($email); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
+        $treballador = Treballador::findOrFail($email);
         return view('treballadors/actualitza', compact('treballador'));
     }
 

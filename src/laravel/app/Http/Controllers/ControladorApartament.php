@@ -15,7 +15,7 @@ class ControladorApartament extends Controller
     public function index()
     {
         $apartament = Apartament::all();
-        return view('apartaments/giindex', compact('apartament'));
+        return view('apartaments/index', compact('apartament'));
     }
 
     /**
@@ -37,17 +37,18 @@ class ControladorApartament extends Controller
     public function store(Request $request)
     {
         $nouApartament = $request->validate([
-            "id_Apartament" => 'required|max:255',
-            "refCast" => 'required|max:255',
+            "id_apartament" => 'required|max:255',
+            "ref_catast" => 'required|max:255',
             "ciutat" => 'required|max:255',
             "barri" => 'required|max:255',
             "carrer" => 'required|max:255',
-            "pis" => 'required|integer',
             "porta" => 'required|integer',
-            "numLlits" => 'required|integer',
-            "numHab" => 'required|integer',
-            "ascen" => 'required|boolean',
-            "ac" => 'required|boolean',
+            "pis" => 'required|integer',
+            "num_llits" => 'required|integer',
+            "num_habitacions" => 'required|integer',
+            "ascensor" => 'required|boolean',
+            "calefaccio" => 'required|max:255',
+            "aire_condicionat" => 'required|boolean'
         ]);
         $apartament = Apartament::create($nouApartament);
 
@@ -87,17 +88,18 @@ class ControladorApartament extends Controller
     public function update(Request $request, $id)
     {
         $dades = $request->validate([
-            "id_Apartament" => 'required|max:255',
-            "refCast" => 'required|max:255',
+            "id_apartament" => 'required|max:255',
+            "ref_catast" => 'required|max:255',
             "ciutat" => 'required|max:255',
             "barri" => 'required|max:255',
             "carrer" => 'required|max:255',
-            "pis" => 'required|integer',
             "porta" => 'required|integer',
-            "numLlits" => 'required|integer',
-            "numHab" => 'required|integer',
-            "ascen" => 'required|boolean',
-            "ac" => 'required|boolean', 
+            "pis" => 'required|integer',
+            "num_llits" => 'required|integer',
+            "num_habitacions" => 'required|integer',
+            "ascensor" => 'required|max:255',
+            "calefaccio" => 'required|max:255',
+            "aire_condicionat" => 'required|max:255'
         ]);
         Apartament::whereId($id)->update($dades);
         return redirect('/apartaments')->with('completed', 'Apartament actualizat');

@@ -8,20 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Apartament extends Model
 {
     public $timestamps = false;
-    protected $primaryKey = 'id_Apartament';
+    protected $primaryKey = 'id_apartament';
     public $incrementing = false;
     use HasFactory;
+    protected $casts = [
+        'ascensor' => 'boolean',
+        'aire_condicionat' => 'boolean',
+    ];
     protected $fillable = [
-        "id_Apartament",
-        "refCast",
+        "id_apartament",
+        "ref_catast",
         "ciutat",
         "barri",
         "carrer",
-        "pis",
         "porta",
-        "numLlits",
-        "numHab",
-        "ascen",
-        "ac"
+        "pis",
+        "num_llits",
+        "num_habitacions",
+        "ascensor",
+        "calefaccio",
+        "aire_condicionat"
     ];
 }

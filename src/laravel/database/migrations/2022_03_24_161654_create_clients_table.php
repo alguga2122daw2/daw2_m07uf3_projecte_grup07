@@ -24,7 +24,7 @@ class CreateClientsTable extends Migration
             $table->string('pais');
             $table->string('email');
             $table->string('tipus_targeta');
-            $table->string('numTargeta');
+            $table->string('num_targeta');
         });
     }
 

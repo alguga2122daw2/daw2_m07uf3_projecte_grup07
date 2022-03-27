@@ -14,18 +14,19 @@ class CreateApartamentsTable extends Migration
     public function up()
     {
         Schema::create('apartaments', function (Blueprint $table) {
-            $table->string("id_Apartament");
-            $table->primary("id_Apartament");
-            $table->string("refCatast");
+            $table->string("id_apartament");
+            $table->primary("id_apartament");
+            $table->string("ref_catast");
             $table->string("ciutat");
             $table->string("barri");
             $table->string("carrer");
-            $table->integer("pis");
             $table->integer("porta");
-            $table->integer("numLlits");
-            $table->integer("numHab");
-            $table->boolean("ascen");
-            $table->boolean("ac");
+            $table->integer("pis");
+            $table->integer("num_llits");
+            $table->integer("num_habitacions");
+            $table->boolean("ascensor");
+            $table->string("calefaccio");
+            $table->boolean("aire_condicionat");
         });
     }
 
