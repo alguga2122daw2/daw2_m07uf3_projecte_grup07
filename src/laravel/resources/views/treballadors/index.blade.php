@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Llista d'empleats</h1>
+<h1>Llista de treballadors</h1>
 <div class="mt-5">
   @if(session()->get('success'))
     <div class="alert alert-success">
@@ -42,5 +42,5 @@
     </tbody>
   </table>
 <div>
-<br><a href="{{ url('treballadors/create') }}">Accés directe a la vista de creació d'empleats</a>
+<br><a href="{{ url('treballadors/create') }}">Accés directe a la vista de creació de treballadors</a>
 @endsection

@@ -49,5 +49,5 @@
         </form>
     </div>
 </div>
-<br><a href="{{ url('treballadors') }}">Accés directe a la Llista de treballadors</a
+<br><a href="{{ url('treballadors') }}">Accés directe a la Llista de treballadors</a>
 @endsection

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    public $timestamps = false;
+    protected $primaryKey = 'dni_client';
+    public $incrementing = false;
     use HasFactory;
     protected $fillable = [
        'dni_client',
