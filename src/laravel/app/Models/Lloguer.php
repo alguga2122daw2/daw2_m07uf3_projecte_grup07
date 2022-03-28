@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Lloguer extends Model
 {
     public $timestamps = false;
-    protected $primaryKey = array('dni_client','id_apartament');
+    protected $primaryKey = ['dni_client','id_apartament'];
     public $incrementing = false;
     use HasFactory;
     protected $fillable = [

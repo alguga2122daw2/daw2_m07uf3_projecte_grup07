@@ -8,6 +8,11 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
    </head>
    <body>
+   @include('includes/navbar')
+   <!-- <a href="{{ url('treballadors') }}">Treballadors</a>
+   <a href="{{ url('apartaments') }}">Apartaments</a>
+   <a href="{{ url('lloguers') }}">Lloguers</a>
+   <a href="{{ url('clients') }}">Clients</a> -->
       <div class="container">
          @yield('content')
       </div>

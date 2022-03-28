@@ -10,8 +10,5 @@
     </div>
   @endif
 <div>
-<br><a href="{{ url('treballadors') }}">Treballadors</a>
-<br><a href="{{ url('apartaments') }}">Apartaments</a>
-<br><a href="{{ url('lloguers') }}">Lloguers</a>
-<br><a href="{{ url('clients') }}">Clients</a>
+<h!>Projecte nº2</h1>
 @endsection

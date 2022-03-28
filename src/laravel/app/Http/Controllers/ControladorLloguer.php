@@ -41,8 +41,8 @@ class ControladorLloguer extends Controller
      */
     public function store(Request $request)
     {
-        $nouClient = $request->validate([
-            "dni_client" => 'required|max:255',
+        $nouLloguer = $request->validate([
+            'dni_client' => 'required|max:255',
             'id_apartament' => 'required|max:255',
             'data_inici' => 'required|max:255',
             'hora_inici' => 'required|max:255',
@@ -55,7 +55,7 @@ class ControladorLloguer extends Controller
             'quantitat_diposit' => 'required|integer',
             'tipus_asseguranca' => 'required|max:255'
         ]);
-        $lloguer = Lloguer::create($nouClient);
+        $lloguer = Lloguer::create($nouLloguer);
         return redirect('/lloguers')->with('completed', 'Lloguer creat!');
     }
 
@@ -78,7 +78,7 @@ class ControladorLloguer extends Controller
      */
     public function edit($primary_key)
     {
-        $lloguer = Lloguer::findOrFail(explode(",", $primary_key));
+        $lloguer = Lloguer::findOrFail($primary_key);
         return view('lloguers/actualitza', compact('lloguer'));
     }
 
@@ -92,7 +92,7 @@ class ControladorLloguer extends Controller
     public function update(Request $request, $dni_client)
     {
         $dades = $request->validate([
-            "dni_client" => 'required|max:255',
+            'dni_client' => 'required|max:255',
             'id_apartament' => 'required|max:255',
             'data_inici' => 'required|max:255',
             'hora_inici' => 'required|max:255',

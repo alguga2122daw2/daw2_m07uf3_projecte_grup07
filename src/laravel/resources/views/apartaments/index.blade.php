@@ -54,5 +54,5 @@
     </tbody>
   </table>
 <div>
-<br><a href="{{ url('apartaments/create') }}">Accés directe a la vista de creació d'apartaments</a>
+<br><a href="{{ url('apartaments/create') }}"><button type="button" class="btn btn-primary">Crear</button></a>
 @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Llista d'lloguers</h1>
+<h1>Llista de lloguers</h1>
 <div class="mt-5">
   @if(session()->get('success'))
     <div class="alert alert-success">
@@ -42,7 +42,7 @@
             <td>{{$llog->quantitat_diposit}}</td>
             <td>{{$llog->tipus_asseguranca}}</td>
             <td class="text-left">
-                <a href="{{ route('lloguers.edit', $llog->dni_client.','.$llog->id_apartament)}}" class="btn btn-success btn-sm">Edita</a>
+                <a href="{{ route('lloguers.edit', array($llog->dni_client,$llog->id_apartament))}}" class="btn btn-success btn-sm">Edita</a>
                 <form action="{{ route('lloguers.destroy', $llog->id_apartament)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
@@ -54,5 +54,5 @@
     </tbody>
   </table>
 <div>
-<br><a href="{{ url('lloguers/create') }}">Accés directe a la vista de creació d'lloguers</a>
+<br><a href="{{ url('lloguers/create') }}"><button type="button" class="btn btn-primary">Crear</button></a>
 @endsection

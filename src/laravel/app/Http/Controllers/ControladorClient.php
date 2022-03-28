@@ -39,7 +39,7 @@ class ControladorClient extends Controller
         $nouClient = $request->validate([
             'dni_client' => 'required|max:255',
             'nom_cognoms' => 'required|max:255',
-            'edat' => 'required|max:255',
+            'edat' => 'required|integer',
             'telefon' => 'required|max:255',
             'adreca' => 'required|max:255',
             'ciutat' => 'required|max:255',

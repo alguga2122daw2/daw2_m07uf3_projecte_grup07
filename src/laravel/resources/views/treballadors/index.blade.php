@@ -42,5 +42,5 @@
     </tbody>
   </table>
 <div>
-<br><a href="{{ url('treballadors/create') }}">Accés directe a la vista de creació de treballadors</a>
+<br><a href="{{ url('treballadors/create') }}"><button type="button" class="btn btn-primary">Crear</button></a>
 @endsection

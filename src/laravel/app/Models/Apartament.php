@@ -11,10 +11,6 @@ class Apartament extends Model
     protected $primaryKey = 'id_apartament';
     public $incrementing = false;
     use HasFactory;
-    protected $casts = [
-        'ascensor' => 'boolean',
-        'aire_condicionat' => 'boolean',
-    ];
     protected $fillable = [
         "id_apartament",
         "ref_catast",

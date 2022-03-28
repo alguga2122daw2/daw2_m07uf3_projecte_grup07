@@ -85,7 +85,7 @@ class ControladorApartament extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_apartament)
     {
         $dades = $request->validate([
             "id_apartament" => 'required|max:255',
@@ -101,7 +101,7 @@ class ControladorApartament extends Controller
             "calefaccio" => 'required|max:255',
             "aire_condicionat" => 'required|max:255'
         ]);
-        Apartament::whereId($id)->update($dades);
+        Apartament::whereIdApartament($id_apartament)->update($dades);
         return redirect('/apartaments')->with('completed', 'Apartament actualizat');
     }
 
@@ -111,9 +111,9 @@ class ControladorApartament extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_apartament)
     {
-        $apartament = Apartament::findOrFail($id);
+        $apartament = Apartament::findOrFail($id_apartament);
         $apartament->delete();
         return redirect('/apartaments')->with('completed', 'Apartament esborrat');
     }
