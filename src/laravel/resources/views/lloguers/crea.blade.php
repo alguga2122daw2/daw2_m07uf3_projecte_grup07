@@ -20,60 +20,61 @@
     <form method="post" action="{{ route('lloguers.store') }}">
       <div class="form-group">
         @csrf
-        <label for="dni_Client">DNI del client</label>
-        <input type="text" class="form-control" name="dni_Client" />
+        <label for="dni_client">DNI del client</label>
+        <input type="text" class="form-control" name="dni_client" />
       </div>
       <div class="form-group">
-        <label for="id_Apartament">Referencia catastral</label>
-        <input type="text" class="form-control" name="id_Apartament" />
+        <label for="id_apartament">ID Apartament</label>
+        <input type="text" class="form-control" name="id_apartament" />
       </div>
       <div class="form-group">
-        <label for="data_Inici">Data d'inici</label>
-        <input type="text" class="form-control" name="data_Inici" />
+        <label for="data_inici">Data d'inici</label>
+        <input type="text" class="form-control" name="data_inici" />
       </div>
       <div class="form-group">
-        <label for="hora_Inici">Hora d'inici</label>
-        <input type="text" class="form-control" name="hora_Inici" />
+        <label for="hora_inici">Hora d'inici</label>
+        <input type="text" class="form-control" name="hora_inici" />
       </div>
       <div class="form-group">
-        <label for="data_Final">Data de finalització</label>
-        <input type="text" class="form-control" name="data_Final" />
+        <label for="data_final">Data de finalització</label>
+        <input type="text" class="form-control" name="data_final" />
       </div>
       <div class="form-group">
-        <label for="hora_Final">Hora de finalització</label>
-        <input type="text" class="form-control" name="hora_Final" />
+        <label for="hora_final">Hora de finalització</label>
+        <input type="text" class="form-control" name="hora_final" />
       </div>
       <div class="form-group">
-        <label for="lloc_Lliuament">Lloc de lliurament</label>
-        <input type="text" class="form-control" name="lloc_Lliuament" />
+        <label for="lloc_lliurament">Lloc de lliurament</label>
+        <input type="text" class="form-control" name="lloc_lliurament" />
       </div>
       <div class="form-group">
-        <label for="preu_Dia">Preu diari</label>
-        <input type="text" class="form-control" name="preu_Dia" />
-      </div>
-      <!-- Cambiar a CheckBox -->
-      <div class="form-group">
-        <label for="diposit">Diposit</label>
-        <input type="text" class="form-control" name="diposit" />
+        <label for="lloc_devolucio">Lloc de devolució</label>
+        <input type="text" class="form-control" name="lloc_devolucio" />
       </div>
       <div class="form-group">
-        <label for="cant_Diposit">Ascensor</label>
-        <input type="text" class="form-control" name="cant_Diposit" />
+        <label for="preu_per_dia">Preu per dia</label>
+        <input type="text" class="form-control" name="preu_per_dia" />
       </div>
       <div class="form-group">
-				<label for="tipusAsseg">Calefacció</label>
-				<select class="custom-select" name="tipusAsseg">
+        <div class="custom-control custom-checkbox">
+          <input type="hidden" name="diposit" value="0" />
+          <input type="checkbox" class="custom-control-input" id="diposit" name="diposit" value="1">
+          <label class="custom-control-label" for="diposit">Diposit</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="quantitat_diposit">Quantitat del diposit</label>
+        <input type="number" class="form-control" name="quantitat_diposit" />
+      </div>
+      <div class="form-group">
+				<label for="tipus_asseguranca">Tipus d'assegurança</label>
+				<select class="custom-select" name="tipus_asseguranca">
           <!-- Elèctrica/Gas Natural/Butá -->
 					<option value="1000" selected>Fins a 1000</option>
 					<option value="500">Fins a 500</option>
 					<option value="No">Sense franquícia</option>
 				</select>
 			</div>
-      <div class="form-group">
-        <label for="llocDev">Lloc de devolució</label>
-        <input type="text" class="form-control" name="llocDev" />
-      </div>
-
       <button type="submit" class="btn btn-block btn-primary">Envia</button>
     </form>
   </div>

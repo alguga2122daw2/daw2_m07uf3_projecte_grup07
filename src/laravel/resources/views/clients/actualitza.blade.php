@@ -61,8 +61,8 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="numTargeta">Numero targeta</label>
-                <input type="text" class="form-control" name="numTargeta" value="{{ $client->numTargeta }}" />
+                <label for="num_targeta">Numero targeta</label>
+                <input type="text" class="form-control" name="num_targeta" value="{{ $client->num_targeta }}" />
             </div>
             <button type="submit" class="btn btn-block btn-danger">Actualitza</button>
         </form>

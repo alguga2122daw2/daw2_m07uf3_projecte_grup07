@@ -21,6 +21,6 @@ class Client extends Model
        'pais',
        'email',
        'tipus_targeta',
-       'numTargeta',
+       'num_targeta',
     ];
 }

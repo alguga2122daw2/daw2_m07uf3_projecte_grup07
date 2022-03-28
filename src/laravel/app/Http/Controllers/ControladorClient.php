@@ -46,7 +46,7 @@ class ControladorClient extends Controller
             'pais' => 'required|max:255',
             'email' => 'required|max:255',
             'tipus_targeta' => 'required|max:255',
-            'numTargeta' => 'required|max:255'
+            'num_targeta' => 'required|max:255'
         ]);
         $client = Client::create($nouClient);
         return redirect('/clients')->with('completed', 'Client creat!');
@@ -95,7 +95,7 @@ class ControladorClient extends Controller
             'pais' => 'required|max:255',
             'email' => 'required|max:255',
             'tipus_targeta' => 'required|max:255',
-            'numTargeta' => 'required|max:255'
+            'num_targeta' => 'required|max:255'
             ]);
         Client::where('dni_client',$dni_client)->update($dades);
         return redirect('/clients')->with('completed', 'Client actualitzat');

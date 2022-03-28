@@ -8,21 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Lloguer extends Model
 {
     public $timestamps = false;
-    protected $primaryKey = 'email';
+    protected $primaryKey = array('dni_client','id_apartament');
     public $incrementing = false;
     use HasFactory;
     protected $fillable = [
-        'dni_Client',
-        'id_Apartament',
-        'data_Inici',
-        'hora_Inici',
-        'data_Final',
-        'hora_Final',
-        'lloc_Lliuament',
-        'preu_Dia',
+        'dni_client',
+        'id_apartament',
+        'data_inici',
+        'hora_inici',
+        'data_final',
+        'hora_final',
+        'lloc_lliurament',
+        'lloc_devolucio',
+        'preu_per_dia',
         'diposit',
-        'cant_Diposit',
-        'tipusAsseg',
-        'llocDev'
+        'quantitat_diposit',
+        'tipus_asseguranca',
     ];
 }

@@ -36,7 +36,7 @@
             <td>{{$cli->pais}}</td>
             <td>{{$cli->email}}</td>
             <td>{{$cli->tipus_targeta}}</td>
-            <td>{{$cli->numTargeta}}</td>
+            <td>{{$cli->num_targeta}}</td>
             <td class="text-left">
                 <a href="{{ route('clients.edit', $cli->dni_client)}}" class="btn btn-success btn-sm">Edita</a>
                 <form action="{{ route('clients.destroy', $cli->dni_client)}}" method="post" style="display: inline-block">

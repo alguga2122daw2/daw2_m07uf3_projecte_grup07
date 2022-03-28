@@ -59,8 +59,8 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="numTargeta">Numero targeta</label>
-				<input type="text" class="form-control" name="numTargeta" />
+				<label for="num_targeta">Numero targeta</label>
+				<input type="text" class="form-control" name="num_targeta" />
 			</div>
 			<button type="submit" class="btn btn-block btn-primary">Envia</button>
 		</form>

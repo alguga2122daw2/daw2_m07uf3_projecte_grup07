@@ -19,28 +19,28 @@
           <td>Data final</td>
           <td>Hora final</td>
           <td>Lloc de lliurament</td>
+          <td>Lloc de devolució</td>
           <td>Preu per dia</td>
           <td>Diposit</td>
-          <td>Cantitat del diposit</td>
+          <td>Quantitat del diposit</td>
           <td>Tipus de assegurança</td>
-          <td>Lloc de devolució</td>
         </tr>
     </thead>
     <tbody>
         @foreach($lloguer as $llog)
         <tr>
-            <td>{{$llog->$dni_Client}}</td>
-            <td>{{$llog->id_Apartament}}</td>
-            <td>{{$llog->data_Inici}}</td>
-            <td>{{$llog->hora_Inici}}</td>
-            <td>{{$llog->data_Final}}</td>
-            <td>{{$llog->hora_Final}}</td>
-            <td>{{$llog->lloc_Lliuament}}</td>
-            <td>{{$llog->preu_Dia}}</td>
-            <td>{{$llog->diposit}}</td>
-            <td>{{$llog->cant_Diposit}}</td>
-            <td>{{$llog->tipusAsseg}}</td>
-            <td>{{$llog->llocDev}}</td>
+            <td>{{$llog->dni_client}}</td>
+            <td>{{$llog->id_apartament}}</td>
+            <td>{{$llog->data_inici}}</td>
+            <td>{{$llog->hora_inici}}</td>
+            <td>{{$llog->data_final}}</td>
+            <td>{{$llog->hora_final}}</td>
+            <td>{{$llog->lloc_lliurament}}</td>
+            <td>{{$llog->lloc_devolucio}}</td>
+            <td>{{$llog->preu_per_dia}}</td>
+            <td>{{$llog->diposit ? 'Si':'No'}}</td>
+            <td>{{$llog->quantitat_diposit}}</td>
+            <td>{{$llog->tipus_asseguranca}}</td>
             <td class="text-left">
                 <a href="{{ route('lloguers.edit', $llog->id_apartament)}}" class="btn btn-success btn-sm">Edita</a>
                 <form action="{{ route('lloguers.destroy', $llog->id_apartament)}}" method="post" style="display: inline-block">

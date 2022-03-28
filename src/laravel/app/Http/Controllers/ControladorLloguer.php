@@ -37,18 +37,18 @@ class ControladorLloguer extends Controller
     public function store(Request $request)
     {
         $nouClient = $request->validate([
-            "dni_Client" => 'required|max:255',
-            'id_Apartament' => 'required|max:255',
-            'data_Inici' => 'required|max:255',
-            'hora_Inici' => 'required|max:255',
-            'data_Final' => 'required|max:255',
-            'hora_Final' => 'required|max:255',
-            'lloc_Lliuament' => 'required|max:255',
-            'preu_Dia' => 'required|integer',
+            "dni_client" => 'required|max:255',
+            'id_apartament' => 'required|max:255',
+            'data_inici' => 'required|max:255',
+            'hora_inici' => 'required|max:255',
+            'data_final' => 'required|max:255',
+            'hora_final' => 'required|max:255',
+            'lloc_lliurament' => 'required|max:255',
+            'lloc_devolucio' => 'required|max:255',
+            'preu_per_dia' => 'required|integer',
             'diposit' => 'required|boolean',
-            'cant_Diposit' => 'required|integer',
-            'tipusAsseg' => 'required|max:255',
-            'llocDev' => 'required|max:255'
+            'quantitat_diposit' => 'required|integer',
+            'tipus_asseguranca' => 'required|max:255'
         ]);
         $lloguer = Lloguer::create($nouClient);
         return redirect('/lloguers')->with('completed', 'Lloguer creat!');
@@ -88,18 +88,18 @@ class ControladorLloguer extends Controller
     public function update(Request $request, $dni_client)
     {
         $dades = $request->validate([
-            "dni_Client" => 'required|max:255',
-            'id_Apartament' => 'required|max:255',
-            'data_Inici' => 'required|max:255',
-            'hora_Inici' => 'required|max:255',
-            'data_Final' => 'required|max:255',
-            'hora_Final' => 'required|max:255',
-            'lloc_Lliuament' => 'required|max:255',
-            'preu_Dia' => 'required|integer',
+            "dni_client" => 'required|max:255',
+            'id_apartament' => 'required|max:255',
+            'data_inici' => 'required|max:255',
+            'hora_inici' => 'required|max:255',
+            'data_final' => 'required|max:255',
+            'hora_final' => 'required|max:255',
+            'lloc_lliurament' => 'required|max:255',
+            'lloc_devolucio' => 'required|max:255',
+            'preu_per_dia' => 'required|integer',
             'diposit' => 'required|boolean',
-            'cant_Diposit' => 'required|integer',
-            'tipusAsseg' => 'required|max:255',
-            'llocDev' => 'required|max:255'
+            'quantitat_diposit' => 'required|integer',
+            'tipus_asseguranca' => 'required|max:255'
             ]);
         Lloguer::where('dni_client',$dni_client)->update($dades);
         return redirect('/lloguers')->with('completed', 'Lloguer actualitzat');
