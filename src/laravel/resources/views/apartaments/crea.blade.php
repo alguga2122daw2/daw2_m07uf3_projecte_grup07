@@ -56,21 +56,13 @@
         <label for="num_habitacions">Numero de habitacions</label>
         <input type="number" class="form-control" name="num_habitacions" />
       </div>
-      <!-- <div class="form-group">
-        <label for="ascensor">Ascensor</label>
-        <input type="text" class="form-control" name="ascensor" />
-      </div> -->
       <div class="form-group">
         <div class="custom-control custom-checkbox">
-          <input type="hidden" name="ascensor" value="false" />
-          <input type="checkbox" class="custom-control-input" id="ascensor" name="ascensor" value="true">
+          <input type="hidden" name="ascensor" value="0" />
+          <input type="checkbox" class="custom-control-input" id="ascensor" name="ascensor" value="1">
           <label class="custom-control-label" for="ascensor">Ascensor</label>
         </div>
       </div>
-      <!-- <div class="form-group">
-        <label for="calefaccio">Calefacció</label>
-        <input type="text" class="form-control" name="calefaccio" />
-      </div> -->
       <div class="form-group">
 				<label for="calefaccio">Calefacció</label>
 				<select class="custom-select" name="calefaccio">
@@ -80,14 +72,10 @@
 					<option value="Buta">Butá</option>
 				</select>
 			</div>
-      <!-- <div class="form-group">
-        <label for="aire_condicionat">Aire condicionat</label>
-        <input type="text" class="form-control" name="aire_condicionat" />
-      </div> -->
       <div class="form-group">
         <div class="custom-control custom-checkbox">
-          <input type="hidden" name="aire_condicionat" value="false" />
-          <input type="checkbox" class="custom-control-input" id="aire_condicionat" name="aire_condicionat" value="true">
+          <input type="hidden" name="aire_condicionat" value="0" />
+          <input type="checkbox" class="custom-control-input" id="aire_condicionat" name="aire_condicionat" value="1">
           <label class="custom-control-label" for="aire_condicionat">Aire condicionat</label>
         </div>
       </div>

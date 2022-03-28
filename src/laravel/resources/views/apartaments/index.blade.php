@@ -17,12 +17,13 @@
           <td>Ciutat</td>
           <td>Barri</td>
           <td>Carrer</td>
-          <td>Pis</td>
           <td>Porta</td>
+          <td>Pis</td>
           <td>Numero llits</td>
           <td>Numero habitacions</td>
           <td>Ascensor</td>
-          <td>Aire acondicionat</td>
+          <td>Calefacció</td>
+          <td>Aire condicionat</td>
         </tr>
     </thead>
     <tbody>
@@ -33,12 +34,13 @@
             <td>{{$apart->ciutat}}</td>
             <td>{{$apart->barri}}</td>
             <td>{{$apart->carrer}}</td>
-            <td>{{$apart->pis}}</td>
             <td>{{$apart->porta}}</td>
-            <td>{{$apart->numLlits}}</td>
-            <td>{{$apart->numHab}}</td>
-            <td>{{$apart->ascen}}</td>
-            <td>{{$apart->ac}}</td>
+            <td>{{$apart->pis}}</td>
+            <td>{{$apart->num_llits}}</td>
+            <td>{{$apart->num_habitacions}}</td>
+            <td>{{$apart->ascensor ? 'Si':'No'}}</td>
+            <td>{{$apart->calefaccio}}</td>
+            <td>{{$apart->aire_condicionat ? 'Si':'No'}}</td>
             <td class="text-left">
                 <a href="{{ route('apartaments.edit', $apart->id_apartament)}}" class="btn btn-success btn-sm">Edita</a>
                 <form action="{{ route('apartaments.destroy', $apart->id_apartament)}}" method="post" style="display: inline-block">
