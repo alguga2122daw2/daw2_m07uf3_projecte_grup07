@@ -29,7 +29,7 @@
       </div>
       <div class="form-group">
         <label for="data_inici">Data d'inici</label>
-        <input type="text" class="form-control" name="data_inici" />
+        <input type="date" class="form-control" name="data_inici" />
       </div>
       <div class="form-group">
         <label for="hora_inici">Hora d'inici</label>
@@ -37,7 +37,7 @@
       </div>
       <div class="form-group">
         <label for="data_final">Data de finalització</label>
-        <input type="text" class="form-control" name="data_final" />
+        <input type="date" class="form-control" name="data_final" />
       </div>
       <div class="form-group">
         <label for="hora_final">Hora de finalització</label>
@@ -53,7 +53,7 @@
       </div>
       <div class="form-group">
         <label for="preu_per_dia">Preu per dia</label>
-        <input type="text" class="form-control" name="preu_per_dia" />
+        <input type="number" class="form-control" name="preu_per_dia" />
       </div>
       <div class="form-group">
         <div class="custom-control custom-checkbox">

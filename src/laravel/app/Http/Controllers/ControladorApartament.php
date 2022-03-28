@@ -72,9 +72,9 @@ class ControladorApartament extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_apartament)
     {
-        $apartament = Apartament::findOrFail($id);
+        $apartament = Apartament::findOrFail($id_apartament);
         return view('apartaments/actualitza', compact('apartament'));
     }
 

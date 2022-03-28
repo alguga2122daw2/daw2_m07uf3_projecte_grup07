@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lloguer;
+use App\Models\Apartament;
+use App\Models\Client;
 
 class ControladorLloguer extends Controller
 {
@@ -25,7 +27,10 @@ class ControladorLloguer extends Controller
      */
     public function create()
     {
-        return view('lloguers/crea');
+        $lloguer = Lloguer::all();
+        $apartament = Apartament::all();
+        $client = Client::all();
+        return view('lloguers/crea', compact('lloguer'), compact('apartament'), compact('client'));
     }
 
     /**
@@ -71,11 +76,10 @@ class ControladorLloguer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($dni_client)
+    public function edit($primary_key)
     {
-        $lloguer = Lloguer::findOrFail($dni_client);
+        $lloguer = Lloguer::findOrFail(explode(",", $primary_key));
         return view('lloguers/actualitza', compact('lloguer'));
-
     }
 
     /**

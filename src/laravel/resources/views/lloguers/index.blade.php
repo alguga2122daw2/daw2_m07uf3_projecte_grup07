@@ -42,7 +42,7 @@
             <td>{{$llog->quantitat_diposit}}</td>
             <td>{{$llog->tipus_asseguranca}}</td>
             <td class="text-left">
-                <a href="{{ route('lloguers.edit', $llog->id_apartament)}}" class="btn btn-success btn-sm">Edita</a>
+                <a href="{{ route('lloguers.edit', $llog->dni_client.','.$llog->id_apartament)}}" class="btn btn-success btn-sm">Edita</a>
                 <form action="{{ route('lloguers.destroy', $llog->id_apartament)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')
