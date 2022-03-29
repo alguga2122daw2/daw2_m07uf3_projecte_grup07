@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Treballador;
+use Illuminate\Support\Facades\Hash;
 
 class ControladorTreballador extends Controller
 {
@@ -44,6 +45,7 @@ class ControladorTreballador extends Controller
             'hora_entrada' => 'required|max:255',
             'hora_sortida' => 'required|max:255'
         ]);
+        $nouTreballador['contrasenya'] = Hash::make($nouTreballador['contrasenya']);
         $treballador = Treballador::create($nouTreballador);
         return redirect('/treballadors')->with('completed', 'Treballador creat!');
     }
@@ -82,12 +84,12 @@ class ControladorTreballador extends Controller
     {
         $dades = $request->validate([
             'nom' => 'required|max:255',
-            'email' => 'required|max:255',
             'contrasenya' => 'required|max:255',
             'tipus' => 'required|max:255',
             'hora_entrada' => 'required|max:255',
             'hora_sortida' => 'required|max:255'
             ]);
+            $dades['contrasenya'] = Hash::make($dades['contrasenya']);    
         Treballador::whereEmail($email)->update($dades); // TODO: Corregir esto, probablemente no funcione ya que no hay ID. La primary key es email.
         return redirect('/treballadors')->with('completed', 'Treballador actualitzat');
     }

@@ -21,11 +21,7 @@
         <form method="post" action="{{ route('apartaments.update', $apartament->id_apartament) }}">
             <div class="form-group">
                 @csrf
-                @method('PATCH')
-                <label for="id_apartament">ID</label>
-                <input type="text" class="form-control" name="id_apartament" value="{{ $apartament->id_apartament }}" />
-            </div>
-            <div class="form-group">
+                @method('PUT')
                 <label for="ref_catast">Referencia catastral</label>
                 <input type="text" class="form-control" name="ref_catast" value="{{ $apartament->ref_catast }}" />
             </div>

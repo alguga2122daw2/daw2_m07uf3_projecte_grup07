@@ -86,7 +86,6 @@ class ControladorClient extends Controller
     public function update(Request $request, $dni_client)
     {
         $dades = $request->validate([
-            'dni_client' => 'required|max:255',
             'nom_cognoms' => 'required|max:255',
             'edat' => 'required|max:255',
             'telefon' => 'required|max:255',

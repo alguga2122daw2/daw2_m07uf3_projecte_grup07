@@ -39,6 +39,7 @@
             <td>{{$cli->num_targeta}}</td>
             <td class="text-left">
                 <a href="{{ route('clients.edit', $cli->dni_client)}}" class="btn btn-success btn-sm">Edita</a>
+                <a href="{{ route('clients.show', $cli->dni_client)}}" class="btn btn-secondary btn-sm">PDF</a>
                 <form action="{{ route('clients.destroy', $cli->dni_client)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')

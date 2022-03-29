@@ -21,17 +21,13 @@
         <form method="post" action="{{ route('treballadors.update', $treballador->email) }}">
             <div class="form-group">
                 @csrf
-                @method('PATCH')
+                @method('PUT')
                 <label for="nom">Nom</label>
                 <input type="text" class="form-control" name="nom" value="{{ $treballador->nom }}" />
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" name="email" value="{{ $treballador->email }}" />
-            </div>
-            <div class="form-group">
                 <label for="contrasenya">Contrasenya</label>
-                <input type="text" class="form-control" name="contrasenya" value="{{ $treballador->contrasenya }}" />
+                <input type="password" class="form-control" name="contrasenya" value="{{ $treballador->contrasenya }}" />
             </div>
             <div class="form-group">
                 <label for="tipus">Tipus</label>

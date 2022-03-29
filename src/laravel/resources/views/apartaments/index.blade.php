@@ -43,6 +43,7 @@
             <td>{{$apart->aire_condicionat ? 'Si':'No'}}</td>
             <td class="text-left">
                 <a href="{{ route('apartaments.edit', $apart->id_apartament)}}" class="btn btn-success btn-sm">Edita</a>
+                <a href="{{ route('apartaments.show', $apart->id_apartament)}}" class="btn btn-secondary btn-sm">PDF</a>
                 <form action="{{ route('apartaments.destroy', $apart->id_apartament)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')

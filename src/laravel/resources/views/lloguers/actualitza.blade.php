@@ -18,56 +18,60 @@
             </ul>
         </div>
         @endif
-        <form method="post" action="{{ route('apartaments.update', $apartament->id_Apartament) }}">
+        <form method="post" action="{{ route('lloguers.update', $lloguer->dni_client.','.$lloguer->id_apartament) }}">
             <div class="form-group">
                 @csrf
-                @method('PATCH')
-                <label for="id_Apartament">Id</label>
-                <input type="text" class="form-control" name="id_Apartament" value="{{ $apartament->id_Apartament }}" />
+                @method('PUT')
+                <label for="data_inici">Data d'inici</label>
+                <input type="date" class="form-control" name="data_inici" value="{{ $lloguer->data_inici }}" />
             </div>
             <div class="form-group">
-                <label for="refCatast">Referencia catastral</label>
-                <input type="text" class="form-control" name="refCatast" value="{{ $apartament->refCatast }}" />
+                <label for="hora_inici">Hora d'inici</label>
+                <input type="text" class="form-control" name="hora_inici" value="{{ $lloguer->hora_inici }}" />
             </div>
             <div class="form-group">
-                <label for="ciutat">Ciutat</label>
-                <input type="text" class="form-control" name="ciutat" value="{{ $apartament->ciutat }}" />
+                <label for="data_final">Data de finalització</label>
+                <input type="date" class="form-control" name="data_final" value="{{ $lloguer->data_final }}" />
             </div>
             <div class="form-group">
-                <label for="barri">Barri</label>
-                <input type="text" class="form-control" name="barri" value="{{ $apartament->barri }}" />
+                <label for="hora_final">Hora de finalització</label>
+                <input type="text" class="form-control" name="hora_final" value="{{ $lloguer->hora_final }}" />
             </div>
             <div class="form-group">
-                <label for="carrer">Carrer</label>
-                <input type="text" class="form-control" name="carrer" value="{{ $apartament->carrer }}" />
+                <label for="lloc_lliurament">Lloc de lliurament</label>
+                <input type="text" class="form-control" name="lloc_lliurament" value="{{ $lloguer->lloc_lliurament }}" />
             </div>
             <div class="form-group">
-                <label for="pis">Pis</label>
-                <input type="text" class="form-control" name="pis" value="{{ $apartament->pis }}" />
+                <label for="lloc_devolucio">Lloc de devolució</label>
+                <input type="text" class="form-control" name="lloc_devolucio" value="{{ $lloguer->lloc_devolucio }}" />
             </div>
             <div class="form-group">
-                <label for="porta">Porta</label>
-                <input type="text" class="form-control" name="porta" value="{{ $apartament->porta }}" />
+                <label for="preu_per_dia">Preu per dia</label>
+                <input type="number" class="form-control" name="preu_per_dia" value="{{ $lloguer->preu_per_dia }}" />
             </div>
             <div class="form-group">
-                <label for="numLlits">Numero de llits</label>
-                <input type="text" class="form-control" name="numLlits" value="{{ $apartament->numLlits }}" />
+                <div class="custom-control custom-checkbox">
+                    <input type="hidden" name="diposit" value="0" />
+                    <input type="checkbox" class="custom-control-input" id="diposit" name="diposit" value="1" {{ $lloguer->diposit ? 'checked':'' }}>
+                    <label class="custom-control-label" for="diposit">Diposit</label>
+                </div>
             </div>
             <div class="form-group">
-                <label for="numHab">Numero de habitacions</label>
-                <input type="text" class="form-control" name="numHab" value="{{ $apartament->numHab }}" />
+                <label for="quantitat_diposit">Quantitat del diposit</label>
+                <input type="number" class="form-control" name="quantitat_diposit" value="{{ $lloguer->quantitat_diposit }}" />
             </div>
             <div class="form-group">
-                <label for="ascen">Ascensor</label>
-                <input type="text" class="form-control" name="ascen" value="{{ $apartament->ascen }}" />
-            </div>
-            <div class="form-group">
-                <label for="ac">Aire acondicionat</label>
-                <input type="text" class="form-control" name="ac" value="{{ $apartament->ac }}" />
+                <label for="tipus_asseguranca">Tipus d'assegurança</label>
+                <select class="custom-select" name="tipus_asseguranca">
+                    <!-- Elèctrica/Gas Natural/Butá -->
+                    <option value="1000" {{ $lloguer->tipus_asseguranca ? 'selected':'' }}>Fins a 1000</option>
+                    <option value="500" {{ $lloguer->tipus_asseguranca ? 'selected':'' }}>Fins a 500</option>
+                    <option value="No" {{ $lloguer->tipus_asseguranca ? 'selected':'' }}>Sense franquícia</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-block btn-danger">Actualitza</button>
         </form>
     </div>
 </div>
-<br><a href="{{ url('apartaments') }}">Accés directe a la llista de apartaments</a>
+<br><a href="{{ url('lloguers') }}">Accés directe a la llista de lloguers</a>
 @endsection

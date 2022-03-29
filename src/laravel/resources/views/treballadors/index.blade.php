@@ -31,6 +31,7 @@
             <td>{{$tre->hora_sortida}}</td>
             <td class="text-left">
                 <a href="{{ route('treballadors.edit', $tre->email)}}" class="btn btn-success btn-sm">Edita</a>
+                <a href="{{ route('treballadors.show', $tre->email)}}" class="btn btn-secondary btn-sm">PDF</a>
                 <form action="{{ route('treballadors.destroy', $tre->email)}}" method="post" style="display: inline-block">
                     @csrf
                     @method('DELETE')

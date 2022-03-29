@@ -20,12 +20,20 @@
     <form method="post" action="{{ route('lloguers.store') }}">
       <div class="form-group">
         @csrf
-        <label for="dni_client">DNI del client</label>
-        <input type="text" class="form-control" name="dni_client" />
+        <label for="dni_client">DNI del Client</label>
+        <select class="custom-select" name="dni_client">
+          @foreach($client as $cli)
+          <option value="{{$cli->dni_client}}">{{$cli->nom_cognoms}} (DNI: {{$cli->dni_client}})</option>
+          @endforeach
+        </select>
       </div>
       <div class="form-group">
         <label for="id_apartament">ID Apartament</label>
-        <input type="text" class="form-control" name="id_apartament" />
+        <select class="custom-select" name="id_apartament">
+          @foreach($apartament as $apart)
+          <option value="{{$apart->id_apartament}}">{{$apart->id_apartament}}</option>
+          @endforeach
+        </select>
       </div>
       <div class="form-group">
         <label for="data_inici">Data d'inici</label>

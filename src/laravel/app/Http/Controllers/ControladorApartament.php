@@ -61,7 +61,7 @@ class ControladorApartament extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_apartament)
     {
         //
     }
@@ -88,7 +88,6 @@ class ControladorApartament extends Controller
     public function update(Request $request, $id_apartament)
     {
         $dades = $request->validate([
-            "id_apartament" => 'required|max:255',
             "ref_catast" => 'required|max:255',
             "ciutat" => 'required|max:255',
             "barri" => 'required|max:255',

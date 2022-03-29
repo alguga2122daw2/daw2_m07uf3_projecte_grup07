@@ -21,11 +21,7 @@
         <form method="post" action="{{ route('clients.update', $client->dni_client) }}">
             <div class="form-group">
                 @csrf
-                @method('PATCH')
-                <label for="dni_client">Dni client</label>
-                <input type="text" class="form-control" name="dni_client" value="{{ $client->dni_client }}" />
-            </div>
-            <div class="form-group">
+                @method('PUT')
                 <label for="nom_cognoms">Nom i Cognoms</label>
                 <input type="text" class="form-control" name="nom_cognoms" value="{{ $client->nom_cognoms }}" />
             </div>
