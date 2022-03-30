@@ -9,7 +9,8 @@ Vagrant.configure("2") do |config|
     v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
   end
 
-  config.vm.synced_folder "src/", "/var/www/html"
+  config.vm.synced_folder "src/", "/var/www/html",
+    owner: "www-data", group: "vagrant"
   config.vm.synced_folder "conf/", "/etc/apache2/sites-available"
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.network "forwarded_port", guest: 443, host: 8443
@@ -31,14 +32,17 @@ Vagrant.configure("2") do |config|
     apt-get install -y composer
     # Apache
     a2enmod rewrite
+    a2enmod ssl
+    a2enmod headers
     systemctl restart apache2.service
     # Laravel
     su - vagrant -c 'composer global require laravel/installer'
     su - vagrant -c 'echo "export PATH=$PATH:~/.composer/vendor/bin" >> ~/.bashrc'
-    chmod 777 -R /var/www/html
     # User
     ln -s /var/www/html /home/vagrant/apache
     # TODO: Configurar apache para que muestre el proyecto de Laravel
+    a2ensite default-ssl.conf
+    systemctl reload apache2
   SHELL
 
 end

@@ -84,7 +84,7 @@ class ControladorTreballador extends Controller
     {
         $dades = $request->validate([
             'nom' => 'required|max:255',
-            'contrasenya' => 'required|max:255',
+            'contrasenya' => 'max:255',
             'tipus' => 'required|max:255',
             'hora_entrada' => 'required|max:255',
             'hora_sortida' => 'required|max:255'

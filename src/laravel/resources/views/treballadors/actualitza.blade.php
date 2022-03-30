@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="contrasenya">Contrasenya</label>
-                <input type="password" class="form-control" name="contrasenya" value="{{ $treballador->contrasenya }}" />
+                <input type="password" class="form-control" name="contrasenya" />
             </div>
             <div class="form-group">
                 <label for="tipus">Tipus</label>
