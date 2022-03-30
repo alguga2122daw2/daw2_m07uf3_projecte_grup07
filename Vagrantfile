@@ -43,6 +43,7 @@ Vagrant.configure("2") do |config|
     # TODO: Configurar apache para que muestre el proyecto de Laravel
     a2ensite default-ssl.conf
     systemctl reload apache2
+    systemctl enable --now apache2
   SHELL
 
 end
