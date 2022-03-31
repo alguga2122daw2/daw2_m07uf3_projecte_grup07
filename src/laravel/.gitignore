@@ -3,7 +3,9 @@
 /public/storage
 /storage/*.key
 /vendor
-.env
+# ESTO NO SE DEBE DE HACER NUNCA EN PRODUCCIÓN
+# Pero como esto es un proyecto de clase no pasa nada
+#.env
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
