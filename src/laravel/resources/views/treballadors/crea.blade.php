@@ -29,7 +29,7 @@
           </div>
           <div class="form-group">
               <label for="contrasenya">Contrasenya</label>
-              <input type="password" class="form-control" name="contrasenya"/>
+              <input type="password" class="form-control" name="contrasenya" pattern="^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$"/>
           </div>
           <div class="form-group">
               <label for="tipus">Tipus</label>
