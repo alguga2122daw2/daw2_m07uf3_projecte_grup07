@@ -22,16 +22,20 @@
         @csrf
         <label for="dni_client">DNI del Client</label>
         <select class="custom-select" name="dni_client">
-          @foreach($client as $cli)
-          <option value="{{$cli->dni_client}}">{{$cli->nom_cognoms}} (DNI: {{$cli->dni_client}})</option>
+          @foreach($clients as $cli)
+            @if( $lloguers->doesntContain('dni_client', $cli->dni_client) )
+              <option value="{{$cli->dni_client}}">{{$cli->nom_cognoms}} (DNI: {{$cli->dni_client}})</option>
+            @endif
           @endforeach
         </select>
       </div>
       <div class="form-group">
         <label for="id_apartament">ID Apartament</label>
         <select class="custom-select" name="id_apartament">
-          @foreach($apartament as $apart)
-          <option value="{{$apart->id_apartament}}">{{$apart->id_apartament}}</option>
+          @foreach($apartaments as $apart)
+            @if( $lloguers->doesntContain('id_apartament', $apart->id_apartament) )
+              <option value="{{$apart->id_apartament}}">{{$apart->id_apartament}}</option>
+            @endif
           @endforeach
         </select>
       </div>
@@ -72,7 +76,7 @@
       </div>
       <div class="form-group">
         <label for="quantitat_diposit">Quantitat del diposit</label>
-        <input type="number" class="form-control" name="quantitat_diposit" />
+        <input type="number" class="form-control" name="quantitat_diposit" value="0" />
       </div>
       <div class="form-group">
 				<label for="tipus_asseguranca">Tipus d'assegurança</label>
@@ -89,5 +93,3 @@
 </div>
 <br><a href="{{ url('lloguers') }}">Accés directe a la llista de lloguers</a>
 @endsection
-
-<!-- TODO: Cambiar los campos de este formulario para que sean correctos -->

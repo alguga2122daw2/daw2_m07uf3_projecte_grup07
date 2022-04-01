@@ -63,7 +63,8 @@ class ControladorApartament extends Controller
      */
     public function show($id_apartament)
     {
-        //
+        $apartament = Apartament::findOrFail($id_apartament);
+        return view('apartaments/pdf', compact('apartament'));
     }
 
     /**

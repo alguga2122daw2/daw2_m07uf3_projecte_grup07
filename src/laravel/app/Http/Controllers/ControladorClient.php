@@ -58,9 +58,10 @@ class ControladorClient extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($dni_client)
     {
-        //
+        $client = Client::findOrFail($dni_client);
+        return view('clients/pdf', compact('client'));
     }
 
     /**
@@ -73,7 +74,6 @@ class ControladorClient extends Controller
     {
         $client = Client::findOrFail($dni_client);
         return view('clients/actualitza', compact('client'));
-
     }
 
     /**

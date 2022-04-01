@@ -28,10 +28,10 @@ class ControladorLloguer extends Controller
      */
     public function create()
     {
-        $lloguer = Lloguer::all();
-        $apartament = Apartament::all();
-        $client = Client::all();
-        return view('lloguers/crea', compact('lloguer','apartament','client'));
+        $lloguers = Lloguer::all();
+        $apartaments = Apartament::all();
+        $clients = Client::all();
+        return view('lloguers/crea', compact('lloguers','apartaments','clients'));
     }
 
     /**
@@ -53,7 +53,7 @@ class ControladorLloguer extends Controller
             'lloc_devolucio' => 'required|max:255',
             'preu_per_dia' => 'required|integer',
             'diposit' => 'required|boolean',
-            'quantitat_diposit' => 'required|integer',
+            'quantitat_diposit' => 'integer',
             'tipus_asseguranca' => 'required|max:255'
         ]);
         $lloguer = Lloguer::create($nouLloguer);
@@ -66,9 +66,11 @@ class ControladorLloguer extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($primary_key)
     {
-        //
+        $pk_array = explode(',',$primary_key);
+        $lloguer = Lloguer::where('dni_client', $pk_array[0])->where('id_apartament', $pk_array[1])->first();
+        return view('lloguers/pdf', compact('lloguer'));
     }
 
     /**
@@ -103,7 +105,7 @@ class ControladorLloguer extends Controller
             'lloc_devolucio' => 'required|max:255',
             'preu_per_dia' => 'required|integer',
             'diposit' => 'required|boolean',
-            'quantitat_diposit' => 'required|integer',
+            'quantitat_diposit' => 'integer',
             'tipus_asseguranca' => 'required|max:255'
             ]);
         Lloguer::where('dni_client', $pk_array[0])->where('id_apartament', $pk_array[1])->update($dades);

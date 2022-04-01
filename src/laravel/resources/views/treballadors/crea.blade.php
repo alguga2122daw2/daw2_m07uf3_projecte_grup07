@@ -4,7 +4,7 @@
 
 <div class="card mt-5">
   <div class="card-header">
-    Afegeix un nou empleat
+    Afegeix un nou treballador
   </div>
 
   <div class="card-body">
@@ -47,7 +47,5 @@
       </form>
   </div>
 </div>
-<br><a href="{{ url('treballadors') }}">Accés directe a la Llista d'empleats</a>
+<br><a href="{{ url('treballadors') }}">Accés directe a la Llista de treballadors</a>
 @endsection
-
-<!-- TODO: Cambiar los campos de este formulario para que sean correctos -->
