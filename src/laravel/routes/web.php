@@ -4,6 +4,8 @@
 // use App\Http\Controllers\ControladorTreballador;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PDFController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +25,5 @@ Route::resource('treballadors', ControladorTreballador::class);
 Route::resource('apartaments', ControladorApartament::class);
 Route::resource('clients', ControladorClient::class);
 Route::resource('lloguers', ControladorLloguer::class);
+
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);

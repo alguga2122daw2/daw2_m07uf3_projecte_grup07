@@ -15,10 +15,6 @@
                 <input type="text" class="form-control" name="nom" value="{{ $treballador->nom }}" readonly />
             </div>
             <div class="form-group">
-                <label for="contrasenya">Contrasenya</label>
-                <input type="text" class="form-control" name="contrasenya" value="{{ $treballador->contrasenya }}" readonly />
-            </div>
-            <div class="form-group">
                 <label for="tipus">Tipus</label>
                 <input type="text" class="form-control" name="tipus" value="{{ $treballador->tipus }}" readonly />
             </div>
@@ -33,5 +29,5 @@
         </form>
     </div>
 </div>
-<br><a href="{{ url('treballadors') }}">Accés directe a la Llista de treballadors</a>
+<br>
 @endsection

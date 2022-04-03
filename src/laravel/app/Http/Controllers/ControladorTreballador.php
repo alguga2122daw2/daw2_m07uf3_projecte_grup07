@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Treballador;
 use Illuminate\Support\Facades\Hash;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 class ControladorTreballador extends Controller
 {
     /**
@@ -59,7 +59,9 @@ class ControladorTreballador extends Controller
     public function show($email)
     {
         $treballador = Treballador::findOrFail($email);
-        return view('treballadors/pdf', compact('treballador'));
+        // $pdf = PDF::loadView('treballadors/pdf', $treballador);
+        $pdf = PDF::loadHTML(view('treballadors/pdf', compact('treballador')));
+        return $pdf->stream('dompdf.pdf');
     }
 
     /**
