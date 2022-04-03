@@ -5,49 +5,46 @@
 
 <div class="card mt-5">
     <div class="card-header">
-        Actualització de dades
+        Dades del client {{ $client->nom_cognoms }}
     </div>
 
     <div class="card-body">
         <form>
             <div class="form-group">
-                <label for="nom_cognoms">Nom i Cognoms</label>
-                <input type="text" class="form-control" name="nom_cognoms" value="{{ $client->nom_cognoms }}" readonly />
+                <label for="nom_cognoms">Nom i Cognoms: </label>
+                <label for="nom_cognoms">{{ $client->nom_cognoms }}</label>
             </div>
             <div class="form-group">
-                <label for="edat">Edat</label>
-                <input type="number" class="form-control" name="edat" min="1" max="100" value="{{ $client->edat }}" readonly />
+                <label for="edat">Edat: </label>
+                <label for="edat">{{ $client->edat }}</label>
             </div>
             <div class="form-group">
-                <label for="telefon">Telèfon</label>
-                <input type="tel" class="form-control" name="telefon" value="{{ $client->telefon }}" readonly />
+                <label for="telefon">Telèfon: </label>
+                <label for="telefon">{{ $client->telefon }}</label>
             </div>
             <div class="form-group">
-                <label for="adreca">Adreça</label>
-                <input type="text" class="form-control" name="adreca" value="{{ $client->adreca }}" readonly />
+                <label for="adreca">Adreça: </label>
+                <label for="adreca">{{ $client->adreca }}</label>
             </div>
             <div class="form-group">
-                <label for="ciutat">Ciutat</label>
-                <input type="text" class="form-control" name="ciutat" value="{{ $client->ciutat }}" readonly />
+                <label for="ciutat">Ciutat: </label>
+                <label for="ciutat">{{ $client->ciutat }}</label>
             </div>
             <div class="form-group">
-                <label for="pais">Pais</label>
-                <input type="text" class="form-control" name="pais" value="{{ $client->pais }}" readonly />
+                <label for="pais">Pais: </label>
+                <label for="pais">{{ $client->pais }}</label>
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" value="{{ $client->email }}" readonly />
+                <label for="email">Email: </label>
+                <label for="email">{{ $client->email }}</label>
             </div>
             <div class="form-group">
-                <label for="tipus_targeta">Tipus targeta</label>
-                <select class="custom-select" name="tipus_targeta" disabled>
-                    <option value="Debit" {{ $client->tipus_targeta == "Debit" ? 'selected' : '' }} >Dèbit</option>
-                    <option value="Credit" {{ $client->tipus_targeta == "Credit" ? 'selected' : '' }} >Crèdit</option>
-                </select>
+                <label for="tipus_targeta">Tipus targeta: </label>
+                <label for="tipus_targeta">{{ $client->tipus_targeta }}</label>
             </div>
             <div class="form-group">
-                <label for="num_targeta">Numero targeta</label>
-                <input type="text" class="form-control" name="num_targeta" value="{{ $client->num_targeta }}" readonly />
+                <label for="num_targeta">Numero targeta: </label>
+                <label for="num_targeta">{{ $client->num_targeta }}</label>
             </div>
         </form>
     </div>

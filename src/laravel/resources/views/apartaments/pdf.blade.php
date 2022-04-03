@@ -44,7 +44,7 @@
             </div>
             <div class="form-group">
                 <label for="ascensor">Ascensor: </label>
-                <label for="ascensor">{{ $apartament->ascensor }}</label>
+                <label for="ascensor">{{ $apartament->ascensor  ? 'Si':'No'}}</label>
             </div>
             <div class="form-group">
                 <label for="calefaccio">Calefacció: </label>
@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
                 <label for="aire_condicionat">Aire condicionat: </label>
-                <label for="aire_condicionat">{{ $apartament->aire_condicionat }}</label>
+                <label for="aire_condicionat">{{ $apartament->aire_condicionat ? 'Si':'No' }}</label>
             </div>
         </form>
     </div>
