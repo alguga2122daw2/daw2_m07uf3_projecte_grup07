@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Apartament;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ControladorApartament extends Controller
 {
@@ -64,7 +65,8 @@ class ControladorApartament extends Controller
     public function show($id_apartament)
     {
         $apartament = Apartament::findOrFail($id_apartament);
-        return view('apartaments/pdf', compact('apartament'));
+        $pdf = PDF::loadHTML(view('apartaments/pdf', compact('apartament')));
+        return $pdf->stream('dompdf.pdf');
     }
 
     /**

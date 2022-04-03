@@ -4,7 +4,7 @@
 
 
 <div class="card mt-5"> 
-    <table border=1 style="width: 550px;">
+    <table border=1 style="width: 100%;">
         <tr>
             <td>Nom</td>
             <td>Tipus</td>

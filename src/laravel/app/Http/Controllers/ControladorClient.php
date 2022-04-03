@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Client;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ControladorClient extends Controller
 {
@@ -61,7 +62,8 @@ class ControladorClient extends Controller
     public function show($dni_client)
     {
         $client = Client::findOrFail($dni_client);
-        return view('clients/pdf', compact('client'));
+        $pdf = PDF::loadHTML(view('clients/pdf', compact('client')));
+        return  $pdf->stream('dompdf.pdf');
     }
 
     /**

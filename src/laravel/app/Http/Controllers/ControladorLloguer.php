@@ -7,6 +7,7 @@ use App\Models\Lloguer;
 use App\Models\Apartament;
 use App\Models\Client;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ControladorLloguer extends Controller
 {
@@ -70,7 +71,8 @@ class ControladorLloguer extends Controller
     {
         $pk_array = explode(',',$primary_key);
         $lloguer = Lloguer::where('dni_client', $pk_array[0])->where('id_apartament', $pk_array[1])->first();
-        return view('lloguers/pdf', compact('lloguer'));
+        $pdf = PDF::loadHTML(view('lloguers/pdf', compact('lloguer')));
+        return $pdf->stream('dompdf.pdf');
     }
 
     /**

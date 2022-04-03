@@ -5,68 +5,57 @@
 
 <div class="card mt-5">
     <div class="card-header">
-        Visualització de dades
+        Dades del apartament
     </div>
 
     <div class="card-body">
         <form>
             <div class="form-group">
-                <label for="ref_catast">Referencia catastral</label>
-                <input type="text" class="form-control" name="ref_catast" value="{{ $apartament->ref_catast }}" readonly />
+            <label for="ref_catast">Referencia catastral: </label>
+                <label for="ref_catast">{{ $apartament->ref_catast }}</label>
             </div>
             <div class="form-group">
-                <label for="ciutat">Ciutat</label>
-                <input type="text" class="form-control" name="ciutat" value="{{ $apartament->ciutat }}" readonly />
+            <label for="ciutat">Ciutat: </label>
+                <label for="ciutat">{{ $apartament->ciutat }}</label>
             </div>
             <div class="form-group">
-                <label for="barri">Barri</label>
-                <input type="text" class="form-control" name="barri" value="{{ $apartament->barri }}" readonly />
+                <label for="barri">Barri: </label>
+                <label for="hora_entrada">{{ $apartament->barri }}</label>
             </div>
             <div class="form-group">
-                <label for="carrer">Carrer</label>
-                <input type="text" class="form-control" name="carrer" value="{{ $apartament->carrer }}" readonly />
+                <label for="carrer">Carrer: </label>
+                <label for="carrer">{{ $apartament->carrer }}</label>
             </div>
             <div class="form-group">
-                <label for="porta">Porta</label>
-                <input type="text" class="form-control" name="porta" value="{{ $apartament->porta }}" readonly />
+                <label for="porta">Porta: </label>
+                <label for="porta">{{ $apartament->porta }}</label>
             </div>
             <div class="form-group">
-                <label for="pis">Pis</label>
-                <input type="text" class="form-control" name="pis" value="{{ $apartament->pis }}" readonly />
+                <label for="pis">Pis: </label>
+                <label for="pis">{{ $apartament->pis }}</label>
             </div>
             <div class="form-group">
-                <label for="num_llits">Numero de llits</label>
-                <input type="text" class="form-control" name="num_llits" value="{{ $apartament->num_llits }}" readonly />
+                <label for="num_llits">Numero de llits: </label>
+                <label for="num_llits">{{ $apartament->num_llits }}</label>
             </div>
             <div class="form-group">
-                <label for="num_habitacions">Numero de habitacions</label>
-                <input type="text" class="form-control" name="num_habitacions" value="{{ $apartament->num_habitacions }}" readonly />
+                <label for="num_habitacions">Numero de habitacions: </label>
+                <label for="num_habitacions">{{ $apartament->num_habitacions }}</label>
             </div>
             <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                <input type="hidden" name="ascensor" value="0" />
-                <input type="checkbox" class="custom-control-input" id="ascensor" name="ascensor" value="1" disabled {{ $apartament->ascensor ? 'checked':'' }}>
-                <label class="custom-control-label" for="ascensor">Ascensor</label>
-                </div>
+                <label for="ascensor">Ascensor: </label>
+                <label for="ascensor">{{ $apartament->ascensor }}</label>
             </div>
             <div class="form-group">
-				<label for="calefaccio">Calefacció</label>
-				<select class="custom-select" name="calefaccio" disabled>
-                    <!-- Elèctrica/Gas Natural/Butá -->
-					<option value="Electrica" {{ $apartament->calefaccio == "Electrica" ? 'selected':'' }}>Elèctrica</option>
-					<option value="GasNatural" {{ $apartament->calefaccio == "GasNatural" ? 'selected':'' }}>Gas Natural</option>
-					<option value="Buta" {{ $apartament->calefaccio == "Buta" ? 'selected':'' }}>Butá</option>
-				</select>
-			</div>
+                <label for="calefaccio">Calefacció: </label>
+                <label for="calefaccio">{{ $apartament->calefaccio }}</label>
+            </div>
             <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                <input type="hidden" name="aire_condicionat" value="0" />
-                <input type="checkbox" class="custom-control-input" id="aire_condicionat" name="aire_condicionat" value="1" disabled {{ $apartament->aire_condicionat ? 'checked':'' }}>
-                <label class="custom-control-label" for="aire_condicionat">Aire condicionat</label>
-                </div>
+                <label for="aire_condicionat">Aire condicionat: </label>
+                <label for="aire_condicionat">{{ $apartament->aire_condicionat }}</label>
             </div>
         </form>
     </div>
 </div>
-<br><a href="{{ url('apartaments') }}">Accés directe a la llista de apartaments</a>
+<br>
 @endsection
