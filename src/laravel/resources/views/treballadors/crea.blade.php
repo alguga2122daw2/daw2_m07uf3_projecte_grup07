@@ -32,8 +32,12 @@
               <input type="password" class="form-control" name="contrasenya" pattern="^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$"/>
           </div>
           <div class="form-group">
-              <label for="tipus">Tipus</label>
-              <input type="text" class="form-control" name="tipus"/>
+            <label for="tipus">Tipus</label>
+            <select class="custom-select" name="tipus">
+              <!-- Admin/Treballador -->
+              <option value="Treballador" selected>Treballador</option>
+              <option value="Admin">Admin</option>
+            </select>
           </div>
           <div class="form-group">
               <label for="hora_entrada">Hora entrada</label>
