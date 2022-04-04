@@ -9,10 +9,6 @@
    </head>
    <body>
    @include('includes/navbar')
-   <!-- <a href="{{ url('treballadors') }}">Treballadors</a>
-   <a href="{{ url('apartaments') }}">Apartaments</a>
-   <a href="{{ url('lloguers') }}">Lloguers</a>
-   <a href="{{ url('clients') }}">Clients</a> -->
       <div class="container">
          @yield('content')
       </div>
