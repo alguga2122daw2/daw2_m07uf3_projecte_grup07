@@ -64,9 +64,9 @@
                 <label for="tipus_asseguranca">Tipus d'assegurança</label>
                 <select class="custom-select" name="tipus_asseguranca">
                     <!-- Elèctrica/Gas Natural/Butá -->
-                    <option value="1000" {{ $lloguer->tipus_asseguranca ? 'selected':'' }}>Fins a 1000</option>
-                    <option value="500" {{ $lloguer->tipus_asseguranca ? 'selected':'' }}>Fins a 500</option>
-                    <option value="No" {{ $lloguer->tipus_asseguranca ? 'selected':'' }}>Sense franquícia</option>
+                    <option value="1000" {{ $lloguer->tipus_asseguranca == "1000" ? 'selected':'' }}>Fins a 1000</option>
+                    <option value="500" {{ $lloguer->tipus_asseguranca == "500" ? 'selected':'' }}>Fins a 500</option>
+                    <option value="No" {{ $lloguer->tipus_asseguranca == "No" ? 'selected':'' }}>Sense franquícia</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-block btn-danger">Actualitza</button>

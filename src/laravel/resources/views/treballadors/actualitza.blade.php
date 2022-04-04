@@ -31,7 +31,11 @@
             </div>
             <div class="form-group">
                 <label for="tipus">Tipus</label>
-                <input type="text" class="form-control" name="tipus" value="{{ $treballador->tipus }}" />
+                <select class="custom-select" name="tipus">
+                <!-- Admin/Treballador -->
+                <option value="Treballador" {{ $treballador->tipus == "Treballador" ? 'selected':'' }}>Treballador</option>
+                <option value="Admin" {{ $treballador->tipus == "Admin" ? 'selected':'' }}>Admin</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="hora_entrada">Hora entrada</label>
