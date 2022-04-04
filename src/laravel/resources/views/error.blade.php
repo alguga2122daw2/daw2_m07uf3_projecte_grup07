@@ -9,7 +9,7 @@
 <body>
     <div>
         <h2>Hi ha hagut un error</h2>
-        <p>{{}}</p>
+        <p>{{$error}}</p>
     </div>
 </body>
 </html>

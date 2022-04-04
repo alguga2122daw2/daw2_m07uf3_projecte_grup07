@@ -39,13 +39,14 @@
               <option value="Admin">Admin</option>
             </select>
           </div>
+          <?php date_default_timezone_set("Europe/Madrid"); ?>
           <div class="form-group">
               <label for="hora_entrada">Hora entrada</label>
-              <input type="text" class="form-control" name="hora_entrada"/>
+              <input type="text" class="form-control" name="hora_entrada" value="{{$horaAct = date('H:i:s', time())}}"/>
           </div>
           <div class="form-group">
               <label for="hora_sortida">Hora sortida</label>
-              <input type="text" class="form-control" name="hora_sortida"/>
+              <input type="text" class="form-control" name="hora_sortida" value="{{$horaAct = date('H:i:s', time()+ (60*60)*1)}}"/>
           </div>
           <button type="submit" class="btn btn-block btn-primary">Envia</button>
       </form>
