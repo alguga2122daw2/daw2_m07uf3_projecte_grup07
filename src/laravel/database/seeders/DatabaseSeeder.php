@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'nom'=>'admin',
             'email'=>'admin@protonmail.com',
             'contrasenya'=> Hash::make('FjeClot22@'),
-            'tipus'=>'admin',
+            'tipus'=>'Admin',
             'hora_entrada'=>'00:00',
             'hora_sortida'=>'23:59'
         ]);
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             'ciutat' => 'barcelona',
             'pais' => 'espanya',
             'email' => 'RosieOConnor@hotmail.com',
-            'tipus_targeta' => 'credit',
+            'tipus_targeta' => 'Credit',
             'num_targeta' => '4929043901192161'
         ]);
 
@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder
             "num_llits" => 3,
             "num_habitacions" => 3,
             "ascensor" => true,
-            "calefaccio" => 'Gas Natural',
+            "calefaccio" => 'GasNatural',
             "aire_condicionat" => false
         ]);
 
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
             'preu_per_dia' => 115,
             'diposit' => true,
             'quantitat_diposit' => 1200,
-            'tipus_asseguranca' => 'Franquicia1000'
+            'tipus_asseguranca' => '1000'
         ]);
     }
 }
