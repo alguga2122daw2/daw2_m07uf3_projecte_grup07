@@ -1,9 +1,9 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/debian10"
-  config.vm.hostname = "proyecto-m07uf3-laravel-TEST"
+  config.vm.hostname = "proyecto-m07uf3-laravel"
   config.vm.provider "virtualbox" do |v|
     # v.gui = true
-    v.name = "proyecto-m07uf3-laravel-TEST"
+    v.name = "proyecto-m07uf3-laravel"
     v.memory = 2048
     v.cpus = 1
     v.customize ['modifyvm', :id, '--clipboard', 'bidirectional']

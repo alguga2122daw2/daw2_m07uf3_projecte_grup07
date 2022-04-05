@@ -18,6 +18,12 @@ use App\Http\Controllers\PDFController;
 */
 
 Route::get('/', function () {
+    return view('login');
+});
+
+Route::get('/autentica','ControladorLogin@autentica')->name('autenticacio');
+
+Route::get('/inici', function () {
     return view('index');
 });
 

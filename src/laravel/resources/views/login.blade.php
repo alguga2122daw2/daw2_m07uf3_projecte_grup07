@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('disseny2')
+@section('content')
+<br>
+<h1>Accés a la pagina web</h1>
+<div class="card mt-5">
+    <div class="card-header">
+        Validació de l'usuari
+    </div>
+    <div class="card-body">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form method="get" action="{{ route('autenticacio') }}">
+            @csrf
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" name="email" />
+            </div>
+            <div class="form-group">
+                <label for="password">Contrasenya</label>
+                <input type="password" class="form-control" name="password" />
+            </div>
+            <button type="submit" class="btn btn-block btn-primary">Envia</button>
+        </form>
+    </div>
+</div>
+@endsection
